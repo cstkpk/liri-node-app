@@ -14,7 +14,12 @@ var spotify = new Spotify(keys.spotify);
 // Variable to hold the user's search input
 var userSearch = "";
 for (i = 3; i < process.argv.length; i++) {
-    userSearch = userSearch + process.argv[i] + "+";
+    // userSearch = userSearch + process.argv[i] + "+";
+    if (i > 3 && i < process.argv.length) {
+        userSearch = userSearch + "+" + process.argv[i];
+      } else {
+        userSearch += process.argv[i];
+      }
 }
 
 // OMDB function
@@ -39,6 +44,8 @@ function omdbRun(userSearch) {
     })
     .catch(function(err) {
         console.log(err);
+        console.log("Whoops! Looks like there was a problem with your search. Please try another!");
+        console.log("--------------------------");
     });
 };
 
@@ -62,14 +69,16 @@ function bandsRun(userSearch) {
     })
     .catch(function(err) {
         console.log(err);
+        console.log("Whoops! Looks like there was a problem with your search. Please try another!");
+        console.log("--------------------------");
     });
 };
 
 // Spotify function
-function spotifyRun(userSearch) {
+function spotifyRun(pancakes) {
     
     spotify
-    .search({ type: 'track', query: userSearch, limit: 1 })
+    .search({ type: 'track', query: pancakes, limit: 1 })
     .then(function(response) {
     //   console.log(response);
     //   console.log(JSON.stringify(response.tracks.items[0], null, 2)); 
@@ -81,6 +90,8 @@ function spotifyRun(userSearch) {
     })
     .catch(function(err) {
       console.log(err);
+      console.log("Whoops! Looks like there was a problem with your search. Please try another!");
+      console.log("--------------------------");
     });
 };
 
@@ -143,6 +154,11 @@ else if (process.argv[2] === "spotify-this-song") {
 else if (process.argv[2] === "do-what-it-says") {
     whatRun();
 }
+else if (!process.argv[2] || process.argv[2] === "help") {
+    console.log("Welcome to LIRI Bot! \nI can do the following functions for you: \nType 'movie-this' followed by the name of a movie for information about that movie. \nType 'concert-this' followed by the name of a band to find information about the next concert that band is playing. \nType 'spotify-this-song' followed by the name of a song for information about that song. \nOr, type 'do-what-it-says' for a mystery search!");
+    console.log("--------------------------");
+}
 else {
-    console.log("Please enter a valid command!");
+    console.log("Please enter a valid command! \nOr, type 'help' for the menu of commands.");
+    console.log("--------------------------");
 };
