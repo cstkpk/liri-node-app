@@ -31,16 +31,26 @@ function omdbRun(userSearch) {
     axios
     .get(queryURL)
     .then(function(response) {
-        // console.log(response);
-        console.log("Title: " + response.data.Title);
-        console.log("Year produced: " + response.data.Year);
-        console.log("IMDB rating: " + response.data.imdbRating);
-        console.log("Rotten Tomatoes rating: " + response.data.Ratings[1].Value);
-        console.log("Country produced: " + response.data.Country);
-        console.log("Language: " + response.data.Language);
-        console.log("Plot: " + response.data.Plot);
-        console.log("Actors: " + response.data.Actors);
-        console.log("--------------------------");
+      var movieArr = [
+        "Title: " + response.data.Title,
+        "Year produced: " + response.data.Year,
+        "IMDB rating: " + response.data.imdbRating,
+        "Rotten Tomatoes rating: " + response.data.Ratings[1].Value,
+        "Country produced: " + response.data.Country,
+        "Language: " + response.data.Language,
+        "Plot: " + response.data.Plot,
+        "Actors: " + response.data.Actors,
+        "--------------------------\n"
+      ].join("\n");
+      fs.appendFile("log.txt", movieArr, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("Content added!");
+        }
+      });
+      console.log(movieArr);
     })
     .catch(function(err) {
         console.log(err);
@@ -58,18 +68,25 @@ function bandsRun(userSearch) {
     axios
     .get(queryURL)
     .then(function(response) {
-        // console.log(response);
-        // console.log(response.status);
-        console.log("Venue: " + response.data[0].venue.name);
-        console.log("Venue location: " + response.data[0].venue.city + ", " + response.data[0].venue.country);
-        console.log("Time of concert: " + moment(response.data[0].datetime).format("LLL"));
-        // console.log(response.data);
-        // console.log(response.data[0]);
-        console.log("--------------------------");
+      var bandsArr = [
+        "Venue: " + response.data[0].venue.name,
+        "Venue location: " + response.data[0].venue.city + ", " + response.data[0].venue.country,
+        "Time of concert: " + moment(response.data[0].datetime).format("LLL"),
+        "--------------------------\n"
+      ].join("\n");
+      fs.appendFile("log.txt", bandsArr, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("Content added!");
+        }
+      });
+    console.log(bandsArr);
     })
     .catch(function(err) {
         console.log(err);
-        console.log("Whoops! Looks like there was a problem with your search. Please try another!");
+        console.log("Whoops! Looks like that band doesn't have any concerts coming up. Please try another!");
         console.log("--------------------------");
     });
 };
@@ -80,13 +97,22 @@ function spotifyRun(pancakes) {
     spotify
     .search({ type: 'track', query: pancakes, limit: 1 })
     .then(function(response) {
-    //   console.log(response);
-    //   console.log(JSON.stringify(response.tracks.items[0], null, 2)); 
-      console.log("Artist name: " + response.tracks.items[0].album.artists[0].name);
-      console.log("Song name: " + response.tracks.items[0].name);
-      console.log("Album name: " + response.tracks.items[0].album.name);
-      console.log("Preview link: " + response.tracks.items[0].album.artists[0].external_urls.spotify);
-      console.log("--------------------------");
+     var spotifyArr = [   
+      "Artist name: " + response.tracks.items[0].album.artists[0].name,
+      "Song name: " + response.tracks.items[0].name,
+      "Album name: " + response.tracks.items[0].album.name,
+      "Preview link: " + response.tracks.items[0].album.artists[0].external_urls.spotify,
+      "--------------------------\n"
+     ].join("\n");
+     fs.appendFile("log.txt", spotifyArr, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("Content added!");
+        }
+      });
+    console.log(spotifyArr);
     })
     .catch(function(err) {
       console.log(err);
