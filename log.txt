@@ -1,5 +1,13 @@
 
-You searched: the+little+mermaid
+Title: Mr. Nobody
+Year produced: 2009
+IMDB rating: 7.8
+Rotten Tomatoes rating: 67%
+Country produced: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+--------------------------
 Title: The Little Mermaid
 Year produced: 1989
 IMDB rating: 7.6
@@ -8,4 +16,27 @@ Country produced: USA
 Language: English, French
 Plot: A mermaid princess makes a Faustian bargain in an attempt to become human and win a prince's love.
 Actors: Rene Auberjonois, Christopher Daniel Barnes, Jodi Benson, Pat Carroll
+--------------------------
+Venue: Capital One Arena
+Venue location: Washington, United States
+Time of concert: July 12, 2019 7:00 PM
+--------------------------
+Venue: Filene Center at Wolf Trap
+Venue location: Vienna, United States
+Time of concert: July 16, 2019 8:00 PM
+--------------------------
+Artist name: Harry Styles
+Song name: Sign of the Times
+Album name: Harry Styles
+Preview link: https://open.spotify.com/artist/6KImCVD70vtIoJWnq6nGn3
+--------------------------
+Artist name: The B-52's
+Song name: Love Shack
+Album name: Cosmic Thing
+Preview link: https://open.spotify.com/artist/3gdbcIdNypBsYNu3iiCjtN
+--------------------------
+Artist name: Backstreet Boys
+Song name: I Want It That Way
+Album name: The Hits--Chapter One
+Preview link: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
 --------------------------
