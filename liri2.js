@@ -20,7 +20,6 @@ for (i = 3; i < process.argv.length; i++) {
 // OMDB function
 function omdbRun(userSearch) {
 
-
     var queryURL = "http://www.omdbapi.com/?t=" + userSearch + "&y=&plot=short&apikey=trilogy";
     console.log(queryURL);
 
@@ -36,6 +35,7 @@ function omdbRun(userSearch) {
         console.log("Language: " + response.data.Language);
         console.log("Plot: " + response.data.Plot);
         console.log("Actors: " + response.data.Actors);
+        console.log("--------------------------");
     })
     .catch(function(err) {
         console.log(err);
@@ -58,6 +58,7 @@ function bandsRun(userSearch) {
         console.log("Time of concert: " + moment(response.data[0].datetime).format("LLL"));
         // console.log(response.data);
         // console.log(response.data[0]);
+        console.log("--------------------------");
     })
     .catch(function(err) {
         console.log(err);
@@ -76,6 +77,7 @@ function spotifyRun(userSearch) {
       console.log("Song name: " + response.tracks.items[0].name);
       console.log("Album name: " + response.tracks.items[0].album.name);
       console.log("Preview link: " + response.tracks.items[0].album.artists[0].external_urls.spotify);
+      console.log("--------------------------");
     })
     .catch(function(err) {
       console.log(err);
@@ -109,30 +111,38 @@ fs.readFile("random.txt", "utf-8", (err, random) => {
 
 // Conditional statements for user's argv[2] to run the correspondng function
 if (process.argv[2] === "movie-this") {
-    omdbRun(userSearch);
-    if (!userSearch) {
+    if (userSearch) {
+        omdbRun(userSearch);
+    }
+    else if (!userSearch) {
         userSearch = "Mr+Nobody";
         console.log("Whoops! You forgot to choose a movie. We're searching Mr. Nobody for you.");
         omdbRun(userSearch); 
     }
 }
 else if (process.argv[2] === "concert-this") {
-    bandsRun(userSearch);
-    if (!userSearch);
-        userSearch = "Backstreet+Boys";
-        console.log("Whoops! You forgot to choose a song. We're search Backstreet Boys for you.");
+    if (userSearch) {
         bandsRun(userSearch);
+    }
+    else if (!userSearch) {
+        userSearch = "Backstreet+Boys";
+        console.log("Whoops! You forgot to choose a song. We're searching Backstreet Boys for you.");
+        bandsRun(userSearch);
+    }
 }
 else if (process.argv[2] === "spotify-this-song") {
-    spotifyRun(userSearch);
-    if (!userSearch);
+    if (userSearch) {
+        spotifyRun(userSearch);
+    }
+    else if (!userSearch) {
         userSearch = "The+Sign";
         console.log("Whoops! You forgot to choose a song. We're searching The Sign for you.");
         spotifyRun(userSearch);
+    }
 }
 else if (process.argv[2] === "do-what-it-says") {
     whatRun();
 }
 else {
     console.log("Please enter a valid command!");
-}
+};
