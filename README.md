@@ -16,4 +16,4 @@
 
 ![Screenshot of commands](screenshot1.png)
 
-![Video of application](https://drive.google.com/file/d/1tckCiI11YuPJ5sTWU4XGNnXAGPEKuYUp/view?usp=sharing)
+![Video of application](liri-node-app02.webm)
