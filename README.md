@@ -13,3 +13,6 @@
 * LIRI will also log all of your search results to a text file, called log.txt, so you can refer back to your newfound information!
 
 * If at any point while using LIRI, you need help, type: help. This will return a menu of commands and basic instructions for how to use LIRI.
+
+![Screenshot of commands]
+(screenshot1.png)

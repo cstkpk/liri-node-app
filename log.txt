@@ -40,3 +40,12 @@ Song name: I Want It That Way
 Album name: The Hits--Chapter One
 Preview link: https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7
 --------------------------
+Title: The Lion King
+Year produced: 1994
+IMDB rating: 8.5
+Rotten Tomatoes rating: 93%
+Country produced: USA
+Language: English, Swahili, Xhosa, Zulu
+Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+--------------------------
