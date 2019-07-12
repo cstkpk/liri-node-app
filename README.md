@@ -14,5 +14,4 @@
 
 * If at any point while using LIRI, you need help, type: help. This will return a menu of commands and basic instructions for how to use LIRI.
 
-![Screenshot of commands]
-(https://github.com/cstkpk/liri-node-app/blob/master/screenshot1.png)
+![Screenshot of commands](screenshot1.png)
